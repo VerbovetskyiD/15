@@ -4,7 +4,7 @@ const toDoList = {
     _notes: [],
 
     _findId(id) {
-        return this._notes.findIndex((note) => note.id === id );
+        return this._notes.findIndex( (note) => note.id === id );
     },
 
     _toLocalStorage() {
