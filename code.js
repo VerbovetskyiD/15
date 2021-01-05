@@ -1,14 +1,13 @@
-const NOTES = 'notes';
-
 const toDoList = {
-    _notes: [],
+    _notes: JSON.parse(localStorage.getItem('notes')) || [],
 
     _findId(id) {
         return this._notes.findIndex( (note) => note.id === id );
     },
 
     _toLocalStorage() {
-        localStorage.setItem( NOTES, JSON.stringify(this._notes) );
+        const notes = JSON.stringify(this._notes);
+        localStorage.setItem('notes', notes);
     },
 
     newNote(text) {
